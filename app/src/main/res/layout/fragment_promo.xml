@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presenters.ui.fragment.promo.PromoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_medium">
+
+        <include
+            android:id="@+id/frame_goclub"
+            layout="@layout/goclub_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <FrameLayout
+            android:id="@+id/fl_vouchers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/frame_bg"
+            app:layout_constraintEnd_toStartOf="@+id/fl_member"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_goclub">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/margin_medium">
+
+                <TextView
+                    android:id="@+id/tv_total_vouchers"
+                    style="@style/Theme.Gojek.Text.Subtitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/_0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_vouchers"
+                    style="@style/Theme.Gojek.Text.Subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/vouchers"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_vouchers"/>
+
+                <TextView
+                    android:id="@+id/tv_can_use"
+                    style="@style/Theme.Gojek.Text.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:textColor="@color/black"
+                    android:text="@string/can_use"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vouchers"/>
+
+                <View
+                    android:id="@+id/divider_vouchers"
+                    style="@style/Theme.Gojek.Divider"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/orange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_can_use"/>
+
+                <ImageButton
+                    android:id="@+id/btn_arrow_voucher"
+                    style="@style/Theme.Gojek.Icon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_round_arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total_vouchers"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_total_vouchers"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_member"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:background="@drawable/frame_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fl_vouchers"
+            app:layout_constraintEnd_toStartOf="@id/fl_mission"
+            app:layout_constraintStart_toEndOf="@id/fl_vouchers"
+            app:layout_constraintTop_toTopOf="@id/fl_vouchers">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/margin_medium">
+
+                <TextView
+                    android:id="@+id/tv_total_member"
+                    style="@style/Theme.Gojek.Text.Subtitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/_0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_member"
+                    style="@style/Theme.Gojek.Text.Subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/member"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_member"/>
+
+                <TextView
+                    android:id="@+id/tv_active"
+                    style="@style/Theme.Gojek.Text.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:textColor="@color/black"
+                    android:text="@string/active"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_member"/>
+
+                <View
+                    android:id="@+id/divider_member"
+                    style="@style/Theme.Gojek.Divider"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/purple"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_active"/>
+
+                <ImageButton
+                    android:id="@+id/btn_arrow_member"
+                    style="@style/Theme.Gojek.Icon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_round_arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total_member"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_total_member"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_mission"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fl_member"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fl_member"
+            app:layout_constraintTop_toTopOf="@id/fl_member">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/margin_medium">
+
+                <TextView
+                    android:id="@+id/tv_total_mission"
+                    style="@style/Theme.Gojek.Text.Subtitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/_0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_mission"
+                    style="@style/Theme.Gojek.Text.Subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/missions"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_mission"/>
+
+                <TextView
+                    android:id="@+id/tv_running"
+                    style="@style/Theme.Gojek.Text.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:textColor="@color/black"
+                    android:text="@string/running"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_mission"/>
+
+                <View
+                    android:id="@+id/divider_mission"
+                    style="@style/Theme.Gojek.Divider"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_running"/>
+
+                <ImageButton
+                    android:id="@+id/btn_arrow"
+                    style="@style/Theme.Gojek.Icon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_round_arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total_mission"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_total_mission"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_promo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/frame_rounded_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_mission">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/margin_medium">
+
+                <ImageView
+                    android:id="@+id/img_promo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_promo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/title_promo"
+                    style="@style/Theme.Gojek.Text.Subtitle2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:textColor="@color/black"
+                    android:text="@string/input_promo_code"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img_promo"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageButton
+                    android:id="@+id/btn_arrow_promo"
+                    style="@style/Theme.Gojek.Icon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_round_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_title_promo"
+            style="@style/Theme.Gojek.Text.Subtitle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_promo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_promo"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_type_promo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_promo"/>
+
+        <TextView
+            android:id="@+id/tv_look_promo"
+            style="@style/Theme.Gojek.Text.Subtitle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/look_promo"
+            app:layout_constraintEnd_toStartOf="@+id/btn_see_all"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_type_promo"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_see_all"
+            style="@style/Theme.Gojek.Text.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_selected"
+            android:paddingHorizontal="@dimen/margin_medium"
+            android:text="@string/see_all"
+            app:layout_constraintBottom_toBottomOf="@id/tv_look_promo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_look_promo"/>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_promo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_see_all"
+            tools:itemCount="3"
+            tools:listitem="@layout/list_promo"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

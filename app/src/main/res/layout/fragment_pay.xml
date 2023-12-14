@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presenters.ui.fragment.pay.PayFragment">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder_camera"
+        android:layout_width="0dp"
+        android:layout_height="436dp"
+        android:src="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btn_back_arrow"
+        style="@style/Theme.Gojek.Icon"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <ImageButton
+        android:id="@+id/btn_add_picture"
+        style="@style/Theme.Gojek.Icon"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_add_photo"
+        app:layout_constraintStart_toEndOf="@id/btn_back_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_start_flashlight"
+        app:layout_constraintEnd_toStartOf="@+id/btn_start_flashlight"
+        app:layout_constraintTop_toTopOf="@+id/btn_start_flashlight"/>
+
+    <ImageButton
+        android:id="@+id/btn_start_flashlight"
+        style="@style/Theme.Gojek.Icon"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_flash_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/frame_sheet_pay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/frame_sheet_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_finder_camera">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_medium">
+
+            <View
+                android:id="@+id/divider_sheet"
+                style="@style/Theme.Gojek.Divider"
+                android:layout_width="56dp"
+                android:background="@color/dark_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            
+            <TextView
+                android:id="@+id/tv_pay_send"
+                style="@style/Theme.Gojek.Text.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/pay_and_send"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_sheet"/>
+            
+            <ImageView
+                android:id="@+id/img_to_rek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_rek"
+                app:layout_constraintEnd_toStartOf="@id/img_to_qr"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_pay_send"/>
+
+            <ImageView
+                android:id="@+id/img_to_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_qr"
+                app:layout_constraintBottom_toBottomOf="@id/img_to_rek"
+                app:layout_constraintStart_toEndOf="@id/img_to_rek"
+                app:layout_constraintTop_toTopOf="@id/img_to_rek"/>
+            
+            <TextView
+                android:id="@+id/title_rek"
+                style="@style/Theme.Gojek.Text.Menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/to_rek"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/img_to_rek"
+                app:layout_constraintStart_toStartOf="@id/img_to_rek"
+                app:layout_constraintTop_toBottomOf="@id/img_to_rek"/>
+            
+            <TextView
+                android:id="@+id/title_qr"
+                style="@style/Theme.Gojek.Text.Menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/use_qr"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/img_to_qr"
+                app:layout_constraintStart_toStartOf="@id/img_to_qr"
+                app:layout_constraintTop_toBottomOf="@id/img_to_qr"/>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view_pay_user"
+                style="@style/Theme.Gojek.SearchView"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:defaultQueryHint="@string/hint_search"
+                app:iconifiedByDefault="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_rek"
+                app:queryBackground="@android:color/transparent"/>
+            
+            <TextView
+                android:id="@+id/title_friend"
+                style="@style/Theme.Gojek.Text.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_friend"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_view_pay_user"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar_friend"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:src="@drawable/avatar_user"
+                app:layout_constraintEnd_toStartOf="@+id/name_user"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_friend"/>
+            
+            <TextView
+                android:id="@+id/name_user"
+                style="@style/Theme.Gojek.Text.Subtitle1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:maxLines="1"
+                android:text="@string/name_user"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_friend"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/avatar_friend"
+                app:layout_constraintTop_toTopOf="@id/avatar_friend"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

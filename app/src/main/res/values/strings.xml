@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Gojek</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="klik_cek_riwayat"><![CDATA[Klik & cek riwayat]]></string>
+    <string name="rp12_378">Rp12.378</string>
+    <string name="gopay">gopay</string>
+    <string name="pay">Bayar</string>
+    <string name="top_up">Top Up</string>
+    <string name="explore">Eksplor</string>
+    <string name="hint_search"><![CDATA[Cari layanan, makanan, & tujuan]]></string>
+    <string name="gosend">GoSend</string>
+    <string name="gofood">GoFood</string>
+    <string name="gocar">GoCar</string>
+    <string name="goride">GoRide</string>
+    <string name="others">Lainnya</string>
+    <string name="goclub">GoClub</string>
+    <string name="gopulsa">GoPulsa</string>
+    <string name="gomart">GoMart</string>
+    <string name="message_club">117 XP lagi ada Harta Kartun</string>
+    <string name="quick_access">Akses cepat</string>
+    <string name="message_quick_access">Pintu masuk mootor, MNC LAND</string>
+    <string name="gopaylater">gopaylater</string>
+    <string name="tagline_gopay_later">Lebih hemat pake GoPayLater🤩</string>
+    <string name="message_gopay_later">Yuk, belanja di Tokopedia pake GoPay Later dan nikmatin caschbak-nya~</string>
+
+    <string name="title_news">Makin Seru😉</string>
+    <string name="description_news">Sambungin Akun ke Tokopedia, Banyakin Untung</string>
+    <string name="_0">0</string>
+    <string name="missions">Missions</string>
+    <string name="running">Lagi berjalan</string>
+    <string name="active">Lagi aktif</string>
+    <string name="member">Langganan</string>
+    <string name="can_use">Bisa dipakai</string>
+    <string name="vouchers">Vouchers</string>
+    <string name="input_promo_code">Masukan kode promo</string>
+    <string name="title_promo">Promo menarik buat kamu</string>
+    <string name="look_promo">Kiri kanan, Kulihat diskon~ 🤩</string>
+    <string name="see_all">Lihat semua</string>
+
+
+    <string-array name="title_tab">
+        <item>Beranda</item>
+        <item>Promo</item>
+        <item>Pesanan</item>
+        <item>Chat</item>
+    </string-array>
+
+    <string-array name="type_promo">
+        <item>Apa aja</item>
+        <item>GoFood</item>
+        <item>GoPay</item>
+    </string-array>
+
+    <string name="title_promo_1">Tahu Cry Yuk, Cipadu</string>
+    <string name="title_promo_2">Nasi Goreng ABC</string>
+    <string name="title_promo_3">Ayam Geprek Gembus, Cipadu</string>
+    <string name="title_promo_4">Sate tidak ditusuk, Petukangan</string>
+    <string name="title_distance">0.94km</string>
+    <string name="title_rating">4.8·24rb</string>
+    <string name="message_not_found">Oops!\nHalaman tidak tersedia🥺</string>
+    <string name="pay_and_send">Bayar dan Kirim</string>
+    <string name="to_rek">Ke rek.</string>
+    <string name="use_qr">Pakai kode</string>
+    <string name="title_friend">Temanmu di gopay</string>
+    <string name="name_user">Ahmad Al Fayyadh Effendi</string>
+
+</resources>
